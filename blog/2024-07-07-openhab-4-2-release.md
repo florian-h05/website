@@ -320,6 +320,7 @@ The default behavior is a click button.
 To get a press and release behavior, provide two commands separated by a semicolon.
 The first command is sent to the item when the button is pressed and the second command is sent when the button is finally released.
 Here is an example of such a button sending command ON when the button is pressed and command OFF when the button is released.
+
 ```java
 Swith item=myItem mappings=[ON:OFF="On"]
 ```
