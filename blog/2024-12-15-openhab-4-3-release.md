@@ -3,7 +3,7 @@ layout: BlogPost
 category: blog
 title: openHAB 4.3 Release
 author: Florian Hotze and others
-date: '2024-12-15T18:00:00+01:00'
+date: "2024-12-15T18:00:00+01:00"
 previewimage: /uploads/2024-12-15-openhab-4-3-release/header.png
 tags:
   - news
@@ -20,7 +20,7 @@ However, openHAB 4.3 is far from being just a minor step toward openHAB 5 — it
 Having openHAB 4.3 as a solid foundation, we will now focus development on openHAB 5, for which we have already started to collect ideas.
 Make sure to read the outlook towards openHAB 5, it contains some important news!
 
-With that being said, let's checkout some statistics highlighting the activity of our community and  dive into the highlights of the openHAB 4.3 release!
+With that being said, let's checkout some statistics highlighting the activity of our community and dive into the highlights of the openHAB 4.3 release!
 
 # Activity
 
@@ -163,6 +163,8 @@ But not only were new bindings added, some existing bindings also received massi
 
 ### MQTT / Home Assistant
 
+_Cody Cutrer ([@ccutrer](https://github.com/ccutrer))_
+
 The MQTT / Home Assistant binding allows integrating devices that communicate over MQTT, but were designed with Home Assistant in mind, rather than openHAB.
 Some prominent examples include [zwave-js-ui](https://zwave-js.github.io/zwave-js-ui/), [zigbee2mqtt](https://www.zigbee2mqtt.io), and [ESPHome](https://esphome.io).
 Historically, openHAB's support for these devices has been buggy and missing many features, prompting many users to prefer to manually configure generic MQTT things rather than use auto-discovery, which can be time consuming and error prone.
@@ -215,8 +217,6 @@ Many new component types are now supported:
 
 If you manually configure generic MQTT Things to integrate devices that support Home Assistant discovery, I encourage you to try using auto-discovery.
 Please report any issues you have with specific devices in [GitHub issues](https://github.com/openhab/openhab-addons/issues/new?title=%5Bmqtt.homeassistant%5D+Unsupported+Device), and I'll try to address it as soon as I can.
-
-_Cody Cutrer ([@ccutrer](https://github.com/ccutrer))_
 
 ## openHABian Enhancements
 
