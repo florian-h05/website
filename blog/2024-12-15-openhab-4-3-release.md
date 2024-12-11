@@ -163,7 +163,7 @@ But not only were new bindings added, some existing bindings also received massi
 
 ### MQTT / Home Assistant
 
-_Cody Cutrer ([@ccutrer](https://github.com/ccutrer))_
+_Cody Cutrer ([@ccutrer](https://github.com/ccutrer)), openHAB Maintainer_
 
 The MQTT / Home Assistant binding allows integrating devices that communicate over MQTT, but were designed with Home Assistant in mind, rather than openHAB.
 Some prominent examples include [zwave-js-ui](https://zwave-js.github.io/zwave-js-ui/), [zigbee2mqtt](https://www.zigbee2mqtt.io), and [ESPHome](https://esphome.io).
