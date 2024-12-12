@@ -84,7 +84,7 @@ Please refer to the [documentation](/docs/ui/tabbed-pages.html#navigating-tabs) 
 
 When you modify a configuration/setting, a ● symbol is now shown next to the page title to indicate that there are unsaved changes and the configuration page becomes "dirty":
 
-<p align="center"><img style="max-width: 70%; max-height: 1000px;" src="/uploads/2024-12-15-openhab-4-3-release/dirty-indicator.34733bcb.png"/></p>
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/dirty-indicator.34733bcb.png"/></p>
 
 To save the changes, click the `Save` button or hit `Ctrl` + `S` on your keyboard. If you attempt to leave the current configuration page and there are unsaved changes, a warning dialog will be shown to avoid losing your changes.
 
