@@ -27,7 +27,7 @@ That being said, let's check out some statistics praising the activity of our co
 # Highlights
 
 As you might have already noticed in the activity statistics, there was much development on openHAB - too much to list everything.
-Please refer to the [**release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.3.0) to check out what's new and noteworthy (e.g., breaking changes).
+Please refer to the [**release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.3.0) to check out what's new and noteworthy (e.g. breaking changes).
 
 In the following sections, our maintainers and contributors are introducing some new features you don't want to miss!
 
