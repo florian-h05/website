@@ -90,7 +90,7 @@ The availability of Thing actions is a major improvement as it allows several th
 
   ::::
 
-- Control special functionality of Things, e.g., put devices into pairing mode and display the pairing QR code.
+- Control special functionality of Things, e.g. put devices into pairing mode and display the pairing QR code.
 
 Many thanks to my maintainer colleague Laurent Garnier ([@lolodomo](https://github.com/lolodomo)) for his work on the openHAB core parts of this feature!
 
