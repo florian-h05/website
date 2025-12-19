@@ -69,8 +69,8 @@ Thousand thanks to Jeff James ([@jsjames](https://github.com/jsjames)) for initi
 
 ## Blockly Enhancements
 
-@stefan-hoehn: https://github.com/openhab/openhab-webui/pull/3359
-@jsjames: https://github.com/openhab/openhab-webui/pull/3398
+Blockly has also received a major upgrade, including several plugins updates, which fixes a number of issues with our new Vue 3 Main UI.
+Additionally, a new logic block allows to link multiple AND or OR statements comfortably without the clutter of deep nesting.
 
 ## Basic UI Enhancements
 
