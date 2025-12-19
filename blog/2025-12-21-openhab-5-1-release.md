@@ -20,6 +20,10 @@ Please refer to the [**release notes**](https://github.com/openhab/openhab-distr
 
 In the following sections, our maintainers and contributors are introducing some new features you don't want to miss!
 
+## Event Source Tracking
+
+@ccutrer
+
 ## Core Runtime Enhancements
 
 ## Main UI Enhancements
@@ -43,10 +47,30 @@ Since then, we've commited another 150 changes fixing the remaining bugs, refact
 
 Thousand thanks to Jeff James ([@jsjames](https://github.com/jsjames)) for initially starting that effort, and the great team work in the last months - and welcome to the Main UI maintainer team!
 
+### Thing & Item Code Tabs
 
+@jimtng: https://github.com/openhab/openhab-webui/pull/3180
 
+### oh-video Widget
+
+@digitaldan: https://github.com/openhab/openhab-webui/pull/3368
+
+### Visualize semantic model tree for Items
+
+@mherwerge: https://github.com/openhab/openhab-webui/pull/3227
+
+### Developer Sidebar Search
+
+@jimtng: https://github.com/openhab/openhab-webui/pull/3289
+
+### Things, Items & Rules Filtering
+
+@jimtng: https://github.com/openhab/openhab-webui/pull/3308
 
 ## Blockly Enhancements
+
+@stefan-hoehn: https://github.com/openhab/openhab-webui/pull/3359
+@jsjames: https://github.com/openhab/openhab-webui/pull/3398
 
 ## Basic UI Enhancements
 
