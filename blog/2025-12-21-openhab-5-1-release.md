@@ -41,6 +41,9 @@ We therefore are even more thrilled to announce that we have completed a massive
 
 Upgrading from Vue 2 to Vue 3, Framework7 5 to Framework7 7, Vuex to Pinia, and introducing TypeScript into Main UI's codebase.
 
+This not only makes Main UI **ready for the future** development of the Vue ecosystem,
+but the upgrade and later refactoring have also brought **significant performance improvements**, especially for older or low-end devices.
+
 The first steps on that long path were taken in May this year, resulting in the submission of a gigantic PR at the beginning of September, touching about 10,000 lines of code.
 After two months of testing, fixing bugs, and reviewing the changes, that PR was merged at the end of October.
 Since then, we've committed another 150 changes fixing the remaining bugs, refactoring our codebase to TypeScript, and implementing new features.
