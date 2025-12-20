@@ -34,8 +34,7 @@ _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintai
 
 openHAB 5.1 brings xx new add-ons, adding support for new devices:
 
-> TBD: New add-ons in format:
-> - [AirParif Binding](/addons/bindings/airparif/): Integrates [AirParif](https://airparif.fr/) air quality and pollen data for the Paris area into openHAB.
+- [Modus.FoxInverter Binding](/addons/bindings/modbus.foxinverter/): Integrates FoxEss solar inverters and derivatives like the Solakon ONE into openHAB.
 
 But not only were new bindings added, some existing bindings also received massive improvements:
 
