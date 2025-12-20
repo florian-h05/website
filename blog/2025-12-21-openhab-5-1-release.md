@@ -136,8 +136,8 @@ Rules now support filtering by:
 
 ## Blockly Enhancements
 
-Blockly has also received a major upgrade, including several plugins updates, which fixes a number of issues with our new Vue 3 Main UI.
-Additionally, a new logic block allows to link multiple AND or OR statements comfortably without the clutter of deep nesting.
+Blockly has also received a major upgrade, including several plugin updates, which fixes a number of issues with our new Vue 3 Main UI.
+Additionally, a new logic block allows linking multiple _AND_ or _OR_ statements comfortably without the clutter of deep nesting.
 
 ## Basic UI Enhancements
 
