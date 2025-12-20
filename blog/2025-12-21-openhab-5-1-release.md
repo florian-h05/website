@@ -145,7 +145,15 @@ Blockly has also received a major upgrade, including several plugin updates, whi
 
 Additionally, a new logic block allows linking multiple _AND_ or _OR_ statements comfortably without the clutter of deep nesting.
 
+<div style="clear:both;"></div>
+
 ## Basic UI Enhancements
+
+<img src="/uploads/2025-12-21-openhab-5-1-release/basicui-undef.png" class="img-beside-text-right" alt="New Logic Block" />
+
+Basic UI now allows distinguishing a NULL or UNDEF state when a switch, slider, colour picker, or colour temperature picker type element is used by superimposing a question mark on the control.
+
+<div style="clear:both;"></div>
 
 ## Add-on Enhancements
 
