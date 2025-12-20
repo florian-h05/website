@@ -157,13 +157,153 @@ But not only were new bindings added, some existing bindings also received massi
 > TBD (in format):
 > - The [Amber Electric Binding](/addons/bindings/amberelectric/) adds support for energy price forecasts.
 
+### JavaScript Scripting
+
+_Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintainer_
+
+#### Improving Script Actions & Conditions
+
+With openHAB 5.1, we have put a lot of effort into improving the experience for JavaScript Scripting users in rules and scripts in Main UI:
+
+- The event object is now the same as for file-based JavaScript, resolving many issues with handling Java types in JavaScript code.
+- A new wrapper has been introduced, allowing the use of `let`, `const`, `function`, `class` and `return` keywords to define more complex scripts in script actions and conditions.
+  - The script wrapper is always enabled for script actions, so you can directly benefit from this enhancement.
+  - For script conditions, the new wrapper is not enabled by default, as it requires modifying existing conditions to continue working properly.
+    Please refer to the [JavaScript Scripting documentation](/addons/automation/jsscripting/#adding-conditions) for more information.
+
+#### Configuration as Code
+
+For the power users of openHAB, we have introduced a new way of providing masses of Items, implementing the configuration as code principle.
+Items, metadata, and Item - Channel links can now be programmatically provided through file-based scripts, allowing to use functions, loops, and other features of programming languages.
+The main benefit of this new feature is that compared to file-based configuration, it is easily possible to provide the same set of Items for each room, shutter, HVAC, etc. without duplicating definitions.
+It also allows removing dependency on static Item names, channel IDs etc. – those could simply be exported as constants from scripts and used across JavaScript Scripting.
+
+<details>
+
+<summary>View example</summary>
+
+For controlling HVAC, Items may be required for the following:
+
+- current temperature measurement
+- target temperature setpoint
+- heating on/off
+- AC on/off
+
+With file-based DSL configuration, the Items could be defined like this:
+
+```java
+Group               gLivingRoom_HVAC                "Living Room HVAC"                      <heating>           (gLivingRoom)                               ["HVAC"]
+Number:Temperature  LivingRoom_HVAC_Temperature     "Current Temperature [%.1f %unit%]"     <temperature>       (gLivingRoom_HVAC, gTemperatures)           ["Measurement", "Temperature"]  { unit="°C" }
+Number:Temperature  LivingRoom_HVAC_TemperatureSet  "Temperature Setpoint"                  <temperature>       (gLivingRoom_HVAC, gTemperature_Setpoints)  ["Setpoint", "Temperature"]     { unit="°C" }
+Switch              LivingRoom_HVAC_Heating         "Heating"                               <temperature_hot>   (gLivingRoom_HVAC, gHeating)                ["Heating", "Switch"]
+Switch              LivingRoom_HVAC_AC              "AC"                                    <temperature_cold>  (gLivingRoom_HVAC, gAC)                     ["Airconditioning", "Switch"]
+
+Group               gKitchen_HVAC                   "Kitchen HVAC"                          <heating>           (gKitchen)                                  ["HVAC"]
+Number:Temperature  Kitchen_HVAC_Temperature        "Current Temperature [%.1f %unit%]"     <temperature>       (gKitchen_HVAC, gTemperatures)              ["Measurement", "Temperature"]  { unit="°C" }
+Number:Temperature  Kitchen_HVAC_TemperatureSet     "Temperature Setpoint"                  <temperature>       (gKitchen_HVAC, gTemperature_Setpoints)     ["Setpoint", "Temperature"]     { unit="°C" }
+Switch              Kitchen_HVAC_Heating            "Heating"                               <temperature_hot>   (gKitchen_HVAC, gHeating)                   ["Heating", "Switch"]
+```
+
+To control HVAC for each room, we'd need to have several very similar definitions like the above, one block for each room.
+If we later want to change icons or tags, we'd need to adjust every single definition.
+
+Instead of defining each Item in configuration, we'll provide them programmatically:
+
+```javascript
+/**
+ * Provides HVAC Items.
+ * @param {items.Item} room the room to provide for
+ * @param {boolean} [withAc=false] whether to include AC Items
+ * @returns {items.Item} the HVAC group Item
+ */
+function provideHvac (room, withAc = false) {
+  const hvac = items.addItem({
+    type: 'Group',
+    name: room.name + '_HVAC',
+    label: room.label + ' HVAC',
+    category: 'heating',
+    groups: [room.name],
+    tags: ['HVAC']
+  })
+  const baseName = getBaseNameFromGroup(hvac)
+  items.addItem({
+    type: 'Number:Temperature',
+    name: baseName + '_Temperature',
+    label: 'Current Temperature',
+    category: 'temperature',
+    groups: [hvac.name, temperatureMeasurements.name],
+    tags: ['Measurement', 'Temperature'],
+    unit: '°C',
+    format: '%.1f %unit%'
+  })
+  const setpoint = items.addItem({
+    type: 'Number:Temperature',
+    name: baseName + '_TemperatureSet',
+    label: 'Temperature Setpoint',
+    category: 'temperature',
+    groups: [hvac.name, temperatureSetpoints.name],
+    tags: ['Setpoint', 'Temperature'],
+    unit: '°C'
+  })
+  setpoint.postUpdate('22 °C')
+  const localHeating = items.addItem({
+    type: 'Switch',
+    name: baseName + '_Heating',
+    label: 'Heating',
+    category: 'temperature_hot',
+    groups: [hvac.name, heating.name],
+    tags: ['Switch', 'Heating']
+  })
+  localHeating.postUpdate('OFF')
+  if (withAc) {
+    const cooling = items.addItem({
+      type: 'Switch',
+      name: baseName + '_AC',
+      label: 'AC',
+      category: 'temperature_cold',
+      groups: [hvac.name, airConditioning.name],
+      tags: ['Switch', 'Airconditioning']
+    })
+    cooling.postUpdate('OFF')
+  }
+  return hvac
+}
+
+const livingRoom = items.addItem({
+  type: 'Group',
+  name: 'gLivingRoom',
+  label: 'Living Room',
+  category: 'sofa',
+  groups: [groundFloor.name],
+  tags: ['LivingRoom']
+})
+const livingRoomHvac = provideHvac(livingRoom, true)
+
+const kitchen = items.addItem({
+  type: 'Group',
+  name: 'gKitchen',
+  label: 'Kitchen',
+  category: 'kitchen',
+  groups: [groundFloor.name],
+  tags: ['Kitchen']
+})
+provideHvac(kitchen)
+```
+
+The above code requires more lines of code to define the Items we want than the configuration example.
+But as soon as we need those Items for several rooms, e.g. 20, it is way easier to call the function 20-times than to duplicate the Item definition 20-times.
+
+</details>
+
+Refer to the [JavaScript Scripting documentation](/addons/automation/jsscripting/#providing-items-metadata-channel-links-from-scripts).
+
 ### Python Scripting
 
 _Holger Hees ([@HolgerHees](https://github.com/HolgerHees)), openHAB Maintainer_
 
-The Python scripting add-on has taken a major step forward again:
+The Python Scripting add-on has taken a major step forward again:
 
-- GraalVM has been updated and is now also shared between [JavaScript Scripting](/addons/automation/jsscripting), [HomeAssistant](/addons/bindings/homeassistant/), and [Python Scripting](/addons/automation/pythonscripting).
+- GraalVM has been updated and is now also shared between [JavaScript Scripting](/addons/automation/jsscripting/), [HomeAssistant](/addons/bindings/homeassistant/), and [Python Scripting](/addons/automation/pythonscripting/).
 - The helper libraries have been updated to the latest version.
 - Support for virtual environments (VEnv) and native modules has been implemented.
 - Console commands for the Karaf console have been added, including access to an interactive Python console.
