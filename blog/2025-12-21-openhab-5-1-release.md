@@ -26,6 +26,24 @@ In the following sections, our maintainers and contributors are introducing some
 
 ## Core Runtime Enhancements
 
+### Default Persistence Deprecated
+
+_Mark Herwege ([@mherwege](https://github.com/mherwege)), openHAB Contributor_
+
+Persistence services have been able to define default persistence strategies for items.
+If the persistence service was installed, even without any persistence configuration, all items would be persisted using these default strategies.
+This sometimes leads to unexpectedly persisting items, filling databases, taking up storage, and impacting performance.
+
+Even if there was a configuration, Items not in the configuration were sometimes persisted before the configuration was loaded.
+To avoid these issues, we now require an explicit configuration for anything to be persisted.
+
+For new installations, the configuration wizard will still propose a configuration in line with the previous defaults, but it will have to be confirmed explicitly.
+For existing installations being upgraded, the upgrade tool will take care of adjusting the configuration to match previous behaviour.
+Check the upgrade instructions of the [**official release notes**](https://github.com/openhab/openhab-distro/releases/tag/5.1.0) if you have a file-based configuration.
+
+File-based configurations are now also visible (but not editable) in the UI.
+To avoid inconsistencies and errors in the persistence configuration, we now have a persistence health check available (results visible under Health Issues at the bottom of the Settings page) that will show issues with your configuration in Main UI, and directly link to the configurations for fixing these.
+
 ## Main UI Enhancements
 
 _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintainer_
