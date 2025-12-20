@@ -49,7 +49,22 @@ Thousand thanks to Jeff James ([@jsjames](https://github.com/jsjames)) for initi
 
 ### Thing & Item Code Tabs
 
-@jimtng: https://github.com/openhab/openhab-webui/pull/3180
+_Jimmy Tanagra ([@jimtng](https://github.com/jimtng)), openHAB Maintainer_
+
+openHAB 5.1 includes a set of improvements to the **Code** tabs for Thing and Item details page in Main UI.
+While the Code tab has existed for a long time, it previously showed a UI‑internal YAML structure that didn't correspond to any of openHAB's real file‑based formats.
+This made it useful for debugging the UI's internal data, but not for users who work with openHAB's textual configuration.
+
+In this release, the Code tab now displays **proper, file‑compatible syntax**:
+
+- **YAML output now matches the official [file‑based YAML format](/docs/configuration/yaml.html)**, including headers and structure
+- **A new DSL view** shows the equivalent textual DSL representation
+- Users can **switch between YAML and DSL** directly within the tab
+- Code creation and parsing are handled through new APIs exposed by **openHAB Core**, using the same code that handles the configuration files
+
+These refinements make the Code tab more practical for anyone who mixes UI and file‑based configuration, or who simply wants to understand how their UI‑defined Things and Items translate into openHAB's standard textual formats.
+
+Many thanks to Laurent Garnier ([@lolodomo](https://github.com/lolodom)) for implementing the core part of this feature!
 
 ### oh-video Widget
 
