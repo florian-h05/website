@@ -139,7 +139,10 @@ Rules now support filtering by:
 
 ## Blockly Enhancements
 
+<img src="/uploads/2025-12-21-openhab-5-1-release/blockly-logic.png" class="img-beside-text-right" alt="New Logic Block" />
+
 Blockly has also received a major upgrade, including several plugin updates, which fixes a number of issues with our new Vue 3 Main UI.
+
 Additionally, a new logic block allows linking multiple _AND_ or _OR_ statements comfortably without the clutter of deep nesting.
 
 ## Basic UI Enhancements
