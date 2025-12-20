@@ -92,7 +92,32 @@ This makes it much easier to work on multiple projects, revisit previous debuggi
 
 ### Things, Items & Rules Filtering
 
-@jimtng: https://github.com/openhab/openhab-webui/pull/3308
+_Jimmy Tanagra ([@jimtng](https://github.com/jimtng)), openHAB Maintainer_
+
+openHAB 5.1 introduces new filtering options across the **Things**, **Items**, and **Rules** pages,
+making it much easier to narrow down large lists based on meaningful properties rather than relying solely on text search.
+
+#### Things Filtering
+
+You can now filter Things by:
+
+- **Editability** (editable / non‑editable)
+- **Thing status** (e.g. ONLINE, OFFLINE)
+
+#### Items Filtering
+
+Items can now be filtered by:
+
+- **Editability** (editable / non‑editable)
+- **Item type** (e.g. Switch, Number, String, Group, etc.)
+
+#### Rules Filtering
+
+Rules now support filtering by:
+
+- **Editability** (editable / non‑editable)
+- **Rule kind** (marketplace, template‑based, or user‑defined)
+- **Tags** (existing tag filter retained)
 
 ## Blockly Enhancements
 
