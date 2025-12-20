@@ -42,8 +42,8 @@ We therefore are even more thrilled to announce that we have completed a massive
 Upgrading from Vue 2 to Vue 3, Framework7 5 to Framework7 7, Vuex to Pinia, and introducing TypeScript into Main UI's codebase.
 
 The first steps on that long path were taken in May this year, resulting in the submission of a gigantic PR at the begin of September, touching about 10,000 lines of code.
-After two months of testing, fixing bugs and reviewing the changes, that PR was merged end of October.
-Since then, we've commited another 150 changes fixing the remaining bugs, refactoring our codebase to TypeScript and implementing new features.
+After two months of testing, fixing bugs, and reviewing the changes, that PR was merged end of October.
+Since then, we've commited another 150 changes fixing the remaining bugs, refactoring our codebase to TypeScript, and implementing new features.
 
 Thousand thanks to Jeff James ([@jsjames](https://github.com/jsjames)) for initially starting that effort, and the great team work in the last months - and welcome to the Main UI maintainer team!
 
@@ -59,9 +59,36 @@ Thousand thanks to Jeff James ([@jsjames](https://github.com/jsjames)) for initi
 
 @mherwerge: https://github.com/openhab/openhab-webui/pull/3227
 
-### Developer Sidebar Search
+### Developer Sidebar
 
-@jimtng: https://github.com/openhab/openhab-webui/pull/3289
+_Jimmy Tanagra ([@jimtng](https://github.com/jimtng)), openHAB Maintainer_
+
+openHAB 5.1 introduces a set of small improvements to the [Developer Sidebar](/docs/tutorial/tips-and-tricks.html#developer-sidebar).
+
+#### Search Improvement
+
+The sidebar lets you search across Items, Things, Rules, Scripts, Scenes, Pages, Widgets, Transformations, and Persistence configurations, displaying matching results so you can quickly inspect objects and jump directly to their editors.
+In this release, the search feature has been enhanced.
+
+The search field now supports an extended search syntax, allowing more expressive and precise queries:
+
+- **Logical OR** queries (e.g., `front | back`)
+- **Logical AND** queries (e.g., `front camera`)
+- **Exact Phrase** queries (e.g., `"front camera"` will match `show front camera` but not `front side camera`)
+- **Anchored** queries for matching at the start or end of a word (e.g., `^fan` matches `Fan_Switch`, while `fan$` matches `Ceiling_Fan`)
+
+This makes it much easier to quickly locate the exact entity and perform more targeted debugging.
+The Developer Sidebar itself remains unchanged, but its search is now far more flexible for anyone building or troubleshooting UI components.
+For more information on the supported search syntax, have a look at the [Fuse.js documentation](https://www.fusejs.io/examples.html#extended-search).
+
+#### Saved Pins
+
+Previously, pinned objects were lost whenever the page was refreshed or the sidebar was closed, making it difficult to switch between different tasks or "workspaces".
+openHAB 5.1 addresses that limitation by introducing **Saved Pins**, allowing to **save and restore sets of pinned objects**.
+
+You can now save the current set of pinned objects under a custom name and reload that set at any time.
+Saved collections are stored locally in the browser, so they persist across page reloads and browser restarts.
+This makes it much easier to work on multiple projects, revisit previous debugging sessions, or maintain different pin sets for different parts of your setup, all without losing your place.
 
 ### Things, Items & Rules Filtering
 
@@ -92,5 +119,5 @@ But not only were new bindings added, some existing bindings also received massi
 # Enjoy and Get in Touch!
 
 We are excited to see what you will do with the new features and improvements in openHAB 5.1 — your feedback is always welcome!
-As always, our [community forum](https://community.openhab.org/) is there for questions, comments and discussions.
-Do not hesitate to get in touch, join our community, receive help and share your experiences and use cases.
+As always, our [community forum](https://community.openhab.org/) is there for questions, comments, and discussions.
+Do not hesitate to get in touch, join our community, receive help, and share your experiences and use cases.
