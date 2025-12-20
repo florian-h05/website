@@ -154,6 +154,21 @@ But not only were new bindings added, some existing bindings also received massi
 > TBD (in format):
 > - The [Amber Electric Binding](/addons/bindings/amberelectric/) adds support for energy price forecasts.
 
+### Python Scripting
+
+_Holger Hees ([@HolgerHees](https://github.com/HolgerHees)), openHAB Maintainer_
+
+The Python scripting add-on has taken a major step forward again:
+
+- GraalVM has been updated and is now also shared between [JavaScript Scripting](/addons/automation/jsscripting), [HomeAssistant](/addons/bindings/homeassistant/), and [Python Scripting](/addons/automation/pythonscripting).
+- The helper libraries have been updated to the latest version.
+- Support for virtual environments (VEnv) and native modules has been implemented.
+- Console commands for the Karaf console have been added, including access to an interactive Python console.
+- Support for autocompletion in IDEs has been added.
+- The add-on has been refactored and optimised in many ways, fixing many bugs and bringing a few breaking changes.
+
+A detailed overview of these changes can be found in the original [Pull Request](https://github.com/openhab/openhab-addons/pull/19190).
+
 ## openHABian Enhancements
 
 # Enjoy and Get in Touch!
