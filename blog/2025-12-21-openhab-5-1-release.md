@@ -57,7 +57,7 @@ New in the version it is possible to configure such Items with `useTags=true` wh
 This enhancement simplifies configuration for users by reducing the need for manual tag assignment.
 
 The `useTags=true` setting can be applied individually for each channel link of a given Item.
-Or alternatively, `useTags=true` can be applied system-wide globally for all Items via a setting in `$OPENHAB_CONF/services/runtime.cfg` or
+Or alternatively, `useTags=true` can be applied system-wide globally for all Items via a setting in `$OPENHAB_CONF/services/runtime.cfg`.
 
 ## Main UI Enhancements
 
