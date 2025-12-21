@@ -44,6 +44,21 @@ Check the upgrade instructions of the [**official release notes**](https://githu
 File-based configurations are now also visible (but not editable) in the UI.
 To avoid inconsistencies and errors in the persistence configuration, we now have a persistence health check available (results visible under Health Issues at the bottom of the Settings page) that will show issues with your configuration in Main UI, and directly link to the configurations for fixing these.
 
+### Apply Semantic Tags to File-Based Items
+
+_Andrew Fiddian-Green ([@andrewfg](https://github.com/andrewfg)), openHAB Contributor_
+
+Since openHAB 5.0, many bindings have provided default semantic _Point_ and _Property_ tags for their channels.
+
+In the past these tags could be optionally taken over by Items that are configured via the Main UI.
+However, this was not possible for Items configured via an `.items` file.
+
+New in the version it is possible to configure such Items with `useTags=true` which causes the default Point and/or Property tags of the Channel to be automatically applied.
+This enhancement simplifies configuration for users by reducing the need for manual tag assignment.
+
+The `useTags=true` setting can be applied individually for each channel link of a given Item.
+Or alternatively, `useTags=true` can be applied system-wide globally for all Items via a setting in `$OPENHAB_CONF/services/runtime.cfg` or
+
 ## Main UI Enhancements
 
 _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintainer_
