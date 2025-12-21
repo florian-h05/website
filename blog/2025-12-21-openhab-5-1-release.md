@@ -222,6 +222,7 @@ openHAB 5.1 brings xx new add-ons, adding support for new devices:
 - [HomeKit Binding](/addons/bindings/homekit/): Allows pairing with HomeKit accessories and **imports** them into openHAB.
   Do not confuse this with the [HomeKit System Integration](/addons/integrations/homekit/) which **exports** openHAB Items to a HomeKit controller.
 - [Modus.FoxInverter Binding](/addons/bindings/modbus.foxinverter/): Integrates FoxEss solar inverters and derivatives like the Solakon ONE into openHAB.
+- [Niko Home Control Binding](/addons/bindings/nikohomecontrol/): Adds support for energy meters and EV car chargers.
 
 But not only were new bindings added, some existing bindings also received massive improvements:
 
