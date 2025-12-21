@@ -150,25 +150,37 @@ making it much easier to narrow down large lists based on meaningful properties 
 
 #### Things Filtering
 
+<img src="/uploads/2025-12-21-openhab-5-1-release/things-filter.png" class="img-beside-text-right" alt="New Logic Block" />
+
 You can now filter Things by:
 
 - **Editability** (editable / non‑editable)
 - **Thing status** (e.g. ONLINE, OFFLINE)
 
+<div style="clear:both;"></div>
+
 #### Items Filtering
+
+<img src="/uploads/2025-12-21-openhab-5-1-release/items-filter.png" class="img-beside-text-right" alt="New Logic Block" />
 
 Items can now be filtered by:
 
 - **Editability** (editable / non‑editable)
 - **Item type** (e.g. Switch, Number, String, Group, etc.)
 
+<div style="clear:both;"></div>
+
 #### Rules Filtering
+
+<img src="/uploads/2025-12-21-openhab-5-1-release/rules-filter.png" class="img-beside-text-right" alt="New Logic Block" />
 
 Rules now support filtering by:
 
 - **Editability** (editable / non‑editable)
 - **Rule kind** (marketplace, template‑based, or user‑defined)
 - **Tags** (existing tag filter retained)
+
+<div style="clear:both;"></div>
 
 ## Blockly Enhancements
 
