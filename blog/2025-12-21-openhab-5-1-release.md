@@ -70,6 +70,8 @@ A thousand thanks to Jeff James ([@jsjames](https://github.com/jsjames)) for ini
 
 ### Thing & Item Code Tabs
 
+<img src="/uploads/2025-12-21-openhab-5-1-release/code-tab.gif" class="img-beside-text-right" alt="Code Tab YAML" />
+
 _Jimmy Tanagra ([@jimtng](https://github.com/jimtng)), openHAB Maintainer_
 
 openHAB 5.1 includes a set of improvements to the **Code** tabs for Thing and Item details page in Main UI.
@@ -86,6 +88,8 @@ In this release, the Code tab now displays **proper, file‑compatible syntax**:
 These refinements make the Code tab more practical for anyone who mixes UI and file‑based configuration, or who simply wants to understand how their UI‑defined Things and Items translate into openHAB's standard textual formats.
 
 Many thanks to Laurent Garnier ([@lolodomo](https://github.com/lolodom)) for implementing the core part of this feature!
+
+<div style="clear:both;"></div>
 
 ### oh-video Widget
 
