@@ -91,9 +91,20 @@ Many thanks to Laurent Garnier ([@lolodomo](https://github.com/lolodom)) for imp
 
 @digitaldan: https://github.com/openhab/openhab-webui/pull/3368
 
-### Visualise semantic model tree for Items
+### Visualise Semantic Model Tree for Items
 
-@mherwerge: https://github.com/openhab/openhab-webui/pull/3227
+<img src="/uploads/2025-12-21-openhab-5-1-release/visualise-model-tree.png" class="img-beside-text-right" alt="Semantic Model Tree" />
+
+_Mark Herwege ([@mherwege](https://github.com/mherwege)), openHAB Contributor_
+
+The semantic model is becoming a more important part of the configuration for many openHAB users.
+Previously, only the direct semantic parent of an Item was displayed in the Item detail screen.
+However, it is often useful to know where an Item fits in the full semantic model hierarchy.
+
+openHAB 5.1 extends the Item detail screen to show the full model tree for both parent and children Items (for children, the model tree is collapsed by default).
+This also allows you to easily navigate through the semantic model tree by just clicking anywhere in the hierarchy.
+
+<div style="clear:both;"></div>
 
 ### Developer Sidebar
 
@@ -167,7 +178,7 @@ Additionally, a new logic block allows linking multiple _AND_ or _OR_ statements
 
 ## Basic UI Enhancements
 
-<img src="/uploads/2025-12-21-openhab-5-1-release/basicui-undef.png" class="img-beside-text-right" alt="New Logic Block" />
+<img src="/uploads/2025-12-21-openhab-5-1-release/basicui-undef.png" class="img-beside-text-right" alt="Basic UI NULL or UNDEF" />
 
 Basic UI now allows distinguishing a NULL or UNDEF state when a switch, slider, colour picker, or colour temperature picker type element is used by superimposing a question mark on the control.
 
