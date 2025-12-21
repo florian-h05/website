@@ -108,7 +108,23 @@ Many thanks to Laurent Garnier ([@lolodomo](https://github.com/lolodom)) for imp
 
 ### oh-video Widget
 
-@digitaldan: https://github.com/openhab/openhab-webui/pull/3368
+<img src="/uploads/2025-12-21-openhab-5-1-release/camera.png" class="img-beside-text-right" alt="WebRTC" />
+
+_Dan Cunningham ([@digitaldan](https://github.com/digitaldan)), openHAB Maintainer_
+
+This release also includes a set of meaningful improvements to the video widget especially for use cases involving cameras and intercom-style devices.
+
+The following enhancements were introduced:
+
+- **Two-way audio support for WebRTC streams**
+- **Option to start video playback muted**
+- **Support for Image and String items as poster images**
+
+With the addition of two-way audio, users can both listen and speak through compatible WebRTC video streams. This feature should work with any standard WebRTC service that supports bidirectional audio, which many modern cameras already provide.
+
+The newly released **UniFi Protect binding**
+https://openhab.org/addons/bindings/unifiprotect/
+will take direct advantage of this capability, enabling full two-way audio directly within the video widget.
 
 ### Visualise Semantic Model Tree for Items
 
