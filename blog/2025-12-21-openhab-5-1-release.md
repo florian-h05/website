@@ -386,6 +386,40 @@ A detailed overview of these changes can be found in the original [Pull Request]
 
 ## openHABian Enhancements
 
+## iOS App Enhancements
+
+_Dan Cunningham ([@digitaldan](https://github.com/digitaldan)), openHAB Maintainer_
+
+For the better part of a year, the iOS team has been hard at work modernizing the app’s core runtime and overall structure. These changes bring the openHAB iOS app up to current platform standards, make it significantly easier to maintain, and allow us to ship App Store releases much more frequently—alongside our regular TestFlight builds.
+
+I would like to extend a sincere thank you to Tim Bert ([@timbms](https://github.com/timbms)) and Tassilo Karge ([@TAKeanice](https://github.com/TAKeanice)) for their heroic efforts in making this possible. The sheer volume of work, commits, and attention to detail involved is nothing short of impressive.
+
+Beyond this foundational modernization, version **3.1** of the openHAB companion app delivers several of our most requested improvements, along with new features that make the app more powerful and enjoyable to use.
+
+### Multiple Homes
+
+Seamlessly switch between all of your openHAB homes. Managing a second property, office, or vacation home is now effortless and fully integrated into the app experience.
+
+### Refined Interface
+
+Settings are clearer, icons are more consistent, and dark mode has been refined for a cleaner, more polished appearance. The app icon also supports the latest iOS display options.
+
+### Improved Dashboards and Widgets
+
+Charts, widgets, video streams, and other visual components have been enhanced and now behave more reliably and consistently throughout the app.
+
+### Greatly Improved Performance
+
+The app feels noticeably more responsive thanks to substantial performance improvements across networking, notifications, video, charts, and input handling. Many long-standing issues, bugs, and crashes have been resolved in this release.
+
+### Kiosk and Wall-Mount Features
+
+A new built-in screensaver provides a clean, elegant dashboard view for wall-mounted devices. The app now supports command items for device control, local notifications, and navigation actions for both Main UI and Sitemaps.
+
+### Apple Watch Enhancements
+
+The watch companion app has received numerous upgrades and backend improvements, including enhanced networking, more consistent icon handling, and improved authentication—resulting in a smoother and more reliable experience.
+
 # Enjoy and Get in Touch!
 
 We are excited to see what you will do with the new features and improvements in openHAB 5.1 — your feedback is always welcome!
