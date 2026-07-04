@@ -221,11 +221,11 @@ Here are the key features that make this a game-changer for advanced power users
 - **Conditional Branching (`!if`):** Inject structural conditional logic directly into your configuration trees based on your defined variables.
 - Support for YAML's anchors/aliases and mergekeys
 
-#### Quick Example: Zero-Variable Package Instantiation
+#### Quick Example: Dynamic Package Instantiation
 
-To showcase the true power of the system, you don't even need to pass variables to duplicate configuration blocks. YAML Composer treats the `packages` block as a mapping where the unique key becomes the `package_id`. You can automatically derive item names, labels, and MQTT topics directly from that key using built-in string transformations.
+To showcase the true power of the system, you don't need to manually pass repetitive variables to duplicate configuration blocks. YAML Composer treats the `packages` mapping keys natively as a unique `package_id`. From that single key, you can automatically derive clean item names, human-readable labels, and MQTT topics using built-in string transformation filters, while still retaining the ability to inject per-instance overrides.
 
-First, define your reusable package component containing one or more Things and multiple related Items:
+First, define your reusable package component containing a Thing and its related Items:
 
 ```yaml
 # Reusable Package: OPENHAB_CONF/yamlcomposer/packages/smart_plug.inc.yaml
@@ -253,7 +253,7 @@ items:
   # ... more items for the smart plug, e.g. uptime, energy, etc.
 ```
 
-Now, instead of writing endless lines of copy-pasted configuration, you can instantiate this package three times in your main file with zero boilerplate:
+Now, instead of writing endless lines of boilerplate, you can instantiate this package multiple times in your main file. Notice how we cleanly share a global `broker` variable across instances, and override the label for the bedroom heater on the fly:
 
 ```yaml
 # Input file: OPENHAB_CONF/yamlcomposer/main.yaml
@@ -272,7 +272,7 @@ packages:
   # and many more as needed!
 ```
 
-The background watch service instantly processes the file structure and generates a completely expanded, native YAML configuration for openHAB to load:
+The background watch service instantly processes the file structure and generates a completely expanded, native YAML configuration for openHAB to seamlessly load:
 
 ```yaml
 # Generated output: OPENHAB_CONF/yaml/composed/main.yaml
