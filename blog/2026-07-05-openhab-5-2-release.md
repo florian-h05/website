@@ -217,7 +217,7 @@ Here are the key features that make this a game-changer for advanced power users
 - **Rich Expressions & Interpolation:** Utilize Jinjava-backed string interpolation (`${...}`) alongside custom filters like `dig` (for safe nested map/list data retrieval), `capitalize`, `upper`, `lower`, `label`, etc.
 - **Modular Files (`!include`):** Break down massive files into smaller, modular, _reusable_, and highly maintainable snippets with per-invocation variable definitions.
 - **Dynamic Templates (`!insert`):** Define inline templates once and expand them dynamically with per-invocation variable overrides.
-- **Packages (`!packages`):** Bundle and merge modular "packages" of related configurations (Things, Items, etc.) into your main model.
+- **Packages:** Bundle and merge modular "packages" of related configurations (Things, Items, etc.) into your main model.
 - **Conditional Branching (`!if`):** Inject structural conditional logic directly into your configuration trees based on your defined variables.
 - Support for YAML's anchors/aliases and mergekeys
 
