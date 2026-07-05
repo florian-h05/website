@@ -323,15 +323,13 @@ end
 verbose "   ➡️ images"
 FileUtils.cp_r(".vuepress/openhab-docs/configuration/images", "docs/configuration")
 
-if $version == "final"
-  puts "➡️ Migrating the YAML Configuration section"
-  Dir.glob(".vuepress/openhab-docs/configuration/yaml/*.md") do |path|
-    file = File.basename(path)
+puts "➡️ Migrating the YAML Configuration section"
+Dir.glob(".vuepress/openhab-docs/configuration/yaml/*.md") do |path|
+  file = File.basename(path)
 
-    verbose "   ➡️ #{file}"
-    process_file(".vuepress/openhab-docs/configuration/yaml", file, "docs/configuration/yaml",
-                 "#{$docs_repo_root}/configuration/yaml/#{file}")
-  end
+  verbose "   ➡️ #{file}"
+  process_file(".vuepress/openhab-docs/configuration/yaml", file, "docs/configuration/yaml",
+               "#{$docs_repo_root}/configuration/yaml/#{file}")
 end
 
 puts "➡️ Migrating the Main UI section"
