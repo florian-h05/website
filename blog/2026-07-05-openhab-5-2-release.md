@@ -658,6 +658,38 @@ The binding ships with its own built-in web console.
 It lists all your appliances with their connection status and hardware details, and provides a real-time monitoring view of every message exchanged between openHAB and an appliance.
 A handy openHAB configuration generator produces ready-to-use YAML or DSL snippets for custom channels directly from the values you see in the live message stream.
 
+### UniFi Family of Add-ons
+
+_Dan Cunningham ([@digitaldan](https://github.com/digitaldan)), openHAB Maintainer_
+
+Support for Ubiquiti hardware in openHAB previously required two separate bindings, [UniFi Network](/addons/bindings/unifi/doc/network.html) and [UniFi Protect](/addons/bindings/unifi/doc/protect.html), each installed independently with its own bridge and its own copy of your console credentials.
+
+This release consolidates these into a single UniFi binding and adds [UniFi Access](/addons/bindings/unifi/doc/access.html) support.
+The UniFi add-on now covers all three product families: [UniFi Network](/addons/bindings/unifi/doc/network.html) clients and WLANs, [UniFi Protect](/addons/bindings/unifi/doc/protect.html0) cameras and sensors, and [UniFi Access](/addons/bindings/unifi/doc/access.html) doors, locks and readers.
+
+The combined binding allows each UniFi Thing to share a single `unifi:controller` bridge.
+Rather than configuring your host, username, and password separately for each product family, you set up the console once.
+The controller authenticates a single time and shares that session, preventing duplicate logins and lockouts, and removing the complexity of supporting multiple authentication implementations going forward.
+
+Upgrading is easy:
+Your existing Things, Channels, and Items will continue to work.
+For existing UniFi Protect users, all that is required is to point your Protect Things at a `unifi:controller` Bridge.
+Use an existing controller Bridge or create a new one, then use the Main UI to select it as the parent Bridge for your existing UniFi Protect Things.
+
+#### New: UniFi Access
+
+This release introduces first class support for [UniFi Access](/addons/bindings/unifi/doc/access.html), [Ubiquiti's door access platform](https://ui.com/door-access), streaming real-time door events as they happen.
+Capabilities include:
+
+- **Lock control and monitoring:**<br/>
+  Lock and unlock doors, read position sensors, track who last unlocked a door, and apply lock rules such as keep-unlocked, keep-locked, or timed unlock.
+- **Access events:**<br/>
+  Real-time notifications of successful entries, denied attempts, and remote unlocks, including who authenticated and by which method (NFC, PIN, face, mobile, and more).
+- **Doorbell and intercom:**<br/>
+  Monitor the entire door lifecycle, from button press through answered, timed out, or completed.
+- **Reader configuration and security signals:**<br/>
+  Reader access methods, forced-door alarms, and system-wide emergency modes such as lockdown and evacuation.
+
 ### JavaScript & Python Debugger Support
 
 _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintainer_
@@ -672,8 +704,6 @@ To use it, enable it in the JavaScript or Python Scripting add-on configuration 
 Please note that the debugger currently only supports file-based scripts.
 
 Refer to the [JavaScript documentation](/addons/automation/jsscripting/#debugging) for setup instructions.
-
-## openHABian Enhancements
 
 # Enjoy and Get in Touch
 
