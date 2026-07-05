@@ -4,12 +4,12 @@ layout: AboutPage
 title: Download openHAB
 currentVersion: 5.2.0
 # currentMilestoneVersion: 5.2.0.RC2
-currentSnapshotVersion: 5.2.0-SNAPSHOT
+currentSnapshotVersion: 5.3.0-SNAPSHOT
 previousVersions:
-  - version: "5.0"
-    website: https://v50.openhab.org/
   - version: "5.1"
     website: https://v51.openhab.org/
+  - version: "5.0"
+    website: https://v50.openhab.org/
   - version: "4.3"
     website: https://v43.openhab.org/
   - version: "4.2"
