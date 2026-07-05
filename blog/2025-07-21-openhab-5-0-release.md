@@ -274,7 +274,7 @@ A big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)) for w
 
 ### Regenerate Rules from Templates
 
-_Ravi Nadahar ([@Nadahar](https://)), openHAB Contributor_
+_Ravi Nadahar ([@Nadahar](https://github.com/Nadahar)), openHAB Contributor_
 
 Previously, rules created from rule templates were static and could not be updated if the template was changed.
 It was necessary to delete and recreate the rules from the template to apply any updates or changes to the parameters used in the template.
