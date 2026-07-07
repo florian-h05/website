@@ -84,10 +84,10 @@ unless options[:pull_request]
   ADDONS_DST.mkpath
   # Map pre-processed addon folders to their correct destination names
   FileUtils.cp_r(DOCS_SRC / "addons/automation/.", ADDONS_DST / "automation")
-  FileUtils.cp_r(DOCS_SRC / "addons/bindings/.", ADDONS_DST / "bindings")
-  FileUtils.cp_r(DOCS_SRC / "addons/integrations/.", ADDONS_DST / "integrations")
+  FileUtils.cp_r(DOCS_SRC / "addons/binding/.", ADDONS_DST / "bindings")
+  FileUtils.cp_r(DOCS_SRC / "addons/integration/.", ADDONS_DST / "integrations")
   FileUtils.cp_r(DOCS_SRC / "addons/persistence/.", ADDONS_DST / "persistence")
-  FileUtils.cp_r(DOCS_SRC / "addons/transformations/.", ADDONS_DST / "transformations")
+  FileUtils.cp_r(DOCS_SRC / "addons/transformation/.", ADDONS_DST / "transformations")
   FileUtils.cp_r(DOCS_SRC / "addons/ui/.", ADDONS_DST / "ui")
   FileUtils.rm_rf(ADDONS_DST / "ui/org.openhab.ui")
   FileUtils.cp_r(DOCS_SRC / "addons/voice/.", ADDONS_DST / "voice")
